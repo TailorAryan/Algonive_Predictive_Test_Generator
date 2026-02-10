@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PredictFlow | AI Predictive Text Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <div class="background-blobs">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+        <div class="blob blob-3"></div>
+    </div>
+
+    <main class="container">
+        <header class="header">
+            <div class="logo">
+                <span class="logo-icon">✨</span>
+                <h1>PredictFlow</h1>
+            </div>
+            <p class="subtitle">Next-gen predictive text powered by Markov Chains</p>
+        </header>
+
+        <section class="predictor-card">
+            <div class="editor-wrapper">
+                <div class="suggestions-bar" id="suggestions-bar">
+                    <!-- Suggestions will appear here -->
+                    <span class="placeholder-text">Start typing to see suggestions...</span>
+                </div>
+                <textarea id="text-input" placeholder="Type your message here..." spellcheck="false"></textarea>
+                <div class="editor-footer">
+                    <span id="word-count">0 words</span>
+                    <span id="model-status">Model: Bigram Markov</span>
+                </div>
+            </div>
+        </section>
+
+        <section class="controls-grid">
+            <div class="control-panel glass">
+                <h3><span class="icon">📚</span> Training Corpus</h3>
+                <p>Add text to train the model and improve predictions.</p>
+                <textarea id="corpus-input" placeholder="Paste text here to train the model..."></textarea>
+                <button id="train-btn" class="btn primary">Train Model</button>
+            </div>
+
+            <div class="control-panel glass">
+                <h3><span class="icon">⚙️</span> Settings</h3>
+                <div class="setting-item">
+                    <label for="n-gram-select">Prediction Depth (N-gram)</label>
+                    <select id="n-gram-select">
+                        <option value="1">Unigram (1 word)</option>
+                        <option value="2" selected>Bigram (2 words)</option>
+                        <option value="3">Trigram (3 words)</option>
+                    </select>
+                </div>
+                <div class="setting-item">
+                    <label>Auto-learning</label>
+                    <label class="switch">
+                        <input type="checkbox" id="auto-learn" checked>
+                        <span class="slider round"></span>
+                    </label>
+                </div>
+                <button id="clear-btn" class="btn secondary">Clear Dictionary</button>
+            </div>
+        </section>
+
+        <footer class="app-footer">
+            <p>&copy; 2026 aryan.</p>
+        </footer>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
